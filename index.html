@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movement Mondays — impact report, April to September 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDEFE7;
+  --paper-2:#E3E7DB;
+  --ink:#16231B;
+  --ink-soft:#4B5A4E;
+  --line:#C6CDBC;
+  --moss:#2F5D3A;
+  --moss-soft:#4C7C57;
+  --gorse:#B4860E;
+  --estuary:#4E727D;
+  --field:#7E9A5B;
+  --shadow:rgba(22,35,27,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111611;
+    --paper-2:#182019;
+    --ink:#E7EBE1;
+    --ink-soft:#A3B0A4;
+    --line:#2C3A2E;
+    --moss:#87BE93;
+    --moss-soft:#6FA87C;
+    --gorse:#E0B443;
+    --estuary:#8FB2BC;
+    --field:#A8C482;
+    --shadow:rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111611;
+  --paper-2:#182019;
+  --ink:#E7EBE1;
+  --ink-soft:#A3B0A4;
+  --line:#2C3A2E;
+  --moss:#87BE93;
+  --moss-soft:#6FA87C;
+  --gorse:#E0B443;
+  --estuary:#8FB2BC;
+  --field:#A8C482;
+  --shadow:rgba(0,0,0,.45);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Newsreader",Georgia,"Times New Roman",serif;
+  font-size:18px;
+  line-height:1.62;
+  font-weight:400;
+}
+img{max-width:100%}
+
+h1,h2,h3,h4,.ui{font-family:"Archivo","Helvetica Neue",Arial,sans-serif}
+h1,h2,h3,h4{line-height:1.15;font-weight:600;margin:0}
+p{margin:0 0 1em}
+a{color:var(--moss)}
+
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+.narrow{max-width:66ch}
+
+/* ---------- masthead ---------- */
+.mast{padding:64px 0 40px;border-bottom:2px solid var(--ink)}
+.mast .kicker{
+  font-family:"Archivo",sans-serif;font-size:.8rem;font-weight:600;
+  letter-spacing:.02em;color:var(--moss);margin:0 0 20px
+}
+.mast h1{
+  font-size:clamp(2.4rem,6.4vw,4rem);
+  font-weight:700;letter-spacing:-.025em;margin:0 0 18px;
+}
+.mast .standfirst{font-size:1.2rem;color:var(--ink-soft);max-width:34ch;margin:0}
+.mast .meta{
+  margin-top:28px;font-family:"Archivo",sans-serif;font-size:.86rem;
+  color:var(--ink-soft);line-height:1.8
+}
+
+/* ---------- check-out circle ---------- */
+.circle{padding:36px 0 48px;border-bottom:1px solid var(--line)}
+.circle h2{font-size:1.05rem;font-weight:600;margin:0 0 6px}
+.circle .lede{font-size:.95rem;color:var(--ink-soft);margin:0 0 20px;max-width:56ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
+.chip{
+  font-family:"Archivo",sans-serif;font-size:.84rem;font-weight:500;
+  border:1px solid var(--line);background:transparent;color:var(--ink-soft);
+  padding:7px 14px;border-radius:999px;cursor:pointer;
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
+}
+.chip:hover{border-color:var(--moss);color:var(--moss)}
+.chip[aria-pressed="true"]{background:var(--moss);border-color:var(--moss);color:var(--paper)}
+.chip:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--gorse);outline-offset:2px}
+.said{min-height:112px;border-left:3px solid var(--gorse);padding:4px 0 4px 20px}
+.said blockquote{
+  margin:0;font-size:clamp(1.3rem,3.4vw,1.75rem);line-height:1.34;font-weight:400;
+}
+.said .attrib{
+  display:block;margin-top:10px;font-family:"Archivo",sans-serif;
+  font-size:.82rem;color:var(--ink-soft)
+}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:20;background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.nav .inner{
+  display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;
+  max-width:820px;margin:0 auto;padding:0 16px;
+}
+.nav .inner::-webkit-scrollbar{display:none}
+.nav a{
+  flex:0 0 auto;font-family:"Archivo",sans-serif;font-size:.82rem;font-weight:500;
+  color:var(--ink-soft);text-decoration:none;padding:14px 10px;
+  border-bottom:2px solid transparent;white-space:nowrap
+}
+.nav a:hover{color:var(--ink)}
+.nav a.on{color:var(--moss);border-bottom-color:var(--moss)}
+
+/* ---------- sections ---------- */
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+section > .wrap > h2{
+  font-size:clamp(1.6rem,4vw,2.1rem);letter-spacing:-.02em;margin:0 0 6px
+}
+.sec-note{font-family:"Archivo",sans-serif;font-size:.82rem;color:var(--ink-soft);margin:0 0 28px}
+h3{font-size:1.18rem;margin:36px 0 10px}
+h4{font-size:1rem;margin:26px 0 6px}
+.first h3:first-of-type{margin-top:0}
+
+/* ---------- key figures ---------- */
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px;margin:0 0 32px;background:var(--line)}
+.fig{background:var(--paper);padding:20px 18px}
+.fig b{display:block;font-family:"Archivo",sans-serif;font-size:2.3rem;font-weight:700;line-height:1;letter-spacing:-.03em}
+.fig span{display:block;margin-top:8px;font-size:.9rem;color:var(--ink-soft);line-height:1.4}
+
+/* ---------- tables ---------- */
+.scroller{overflow-x:auto;margin:0 0 8px}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:11px 12px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:600;color:var(--ink-soft)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;padding-right:0}
+tr.total td{border-bottom:none;border-top:2px solid var(--ink);font-weight:500}
+.caption{font-family:"Archivo",sans-serif;font-size:.8rem;color:var(--ink-soft);margin:10px 0 0}
+
+/* ---------- chart ---------- */
+.chart{margin:12px 0 4px}
+.bars{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-items:end;height:230px}
+.bar{display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:2px}
+.seg{
+  width:100%;height:0;border-radius:2px 2px 0 0;
+  transition:height .9s cubic-bezier(.2,.7,.3,1);
+}
+.seg.mspw{background:var(--moss)}
+.seg.bush{background:var(--gorse)}
+.seg.nm{background:var(--estuary)}
+.bar .val{
+  font-family:"Archivo",sans-serif;font-size:.8rem;font-weight:600;
+  text-align:center;margin-bottom:6px;opacity:0;transition:opacity .5s ease .4s
+}
+.chart.live .bar .val{opacity:1}
+.xaxis{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:8px;border-top:1px solid var(--line);padding-top:8px}
+.xaxis span{font-family:"Archivo",sans-serif;font-size:.78rem;color:var(--ink-soft);text-align:center}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin:18px 0 0;font-family:"Archivo",sans-serif;font-size:.82rem;color:var(--ink-soft)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:7px;vertical-align:-1px}
+
+/* ---------- pull quotes ---------- */
+.pull{
+  margin:26px 0;padding:0 0 0 20px;border-left:3px solid var(--field);
+}
+.pull p{font-size:1.2rem;line-height:1.42;margin:0 0 8px}
+.pull cite{font-family:"Archivo",sans-serif;font-size:.8rem;font-style:normal;color:var(--ink-soft)}
+
+/* ---------- theme blocks ---------- */
+.theme{padding:26px 0;border-top:1px solid var(--line)}
+.theme:first-of-type{border-top:none;padding-top:0}
+.theme h3{margin-top:0}
+
+/* ---------- case tabs ---------- */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
+.tab{
+  font-family:"Archivo",sans-serif;font-size:.88rem;font-weight:500;
+  background:transparent;border:1px solid var(--line);color:var(--ink-soft);
+  padding:9px 16px;cursor:pointer;border-radius:3px;text-align:left;
+  transition:background .18s ease,color .18s ease,border-color .18s ease
+}
+.tab:hover{border-color:var(--moss);color:var(--moss)}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.case[hidden]{display:none}
+.case .who{
+  font-family:"Archivo",sans-serif;font-size:.8rem;color:var(--moss);margin:0 0 6px;font-weight:600
+}
+.case h3{font-size:clamp(1.35rem,3.6vw,1.8rem);margin:0 0 18px;letter-spacing:-.02em}
+.why{
+  margin-top:24px;padding:18px 20px;background:var(--paper-2);border-left:3px solid var(--moss)
+}
+.why p{margin:0;font-size:.98rem}
+.why strong{font-family:"Archivo",sans-serif;font-size:.82rem;font-weight:600;display:block;margin-bottom:4px;color:var(--moss)}
+
+/* ---------- ratings ---------- */
+.rate{margin:0 0 16px}
+.rate .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:6px}
+.rate .lbl{font-size:.98rem}
+.rate .num{font-family:"Archivo",sans-serif;font-weight:700;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.track{height:7px;background:var(--paper-2);border-radius:4px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--moss);border-radius:4px;transition:width 1s cubic-bezier(.2,.7,.3,1)}
+
+/* ---------- quote grid ---------- */
+.qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2px;background:var(--line);margin:18px 0 0}
+.qgrid figure{margin:0;background:var(--paper);padding:20px 18px}
+.qgrid blockquote{margin:0;font-size:1rem;line-height:1.5}
+.qgrid figcaption{margin-top:10px;font-family:"Archivo",sans-serif;font-size:.78rem;color:var(--ink-soft)}
+
+/* ---------- improvements ---------- */
+.imp{border-top:1px solid var(--line);padding:18px 0}
+.imp h4{margin:0 0 6px}
+.imp p{margin:0;font-size:.98rem}
+
+/* ---------- session log ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.log td:first-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.log .note{font-size:.92rem;color:var(--ink-soft);min-width:280px}
+.log .strand{font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:600;white-space:nowrap}
+.log tr[hidden]{display:none}
+.s-mspw{color:var(--moss)}
+.s-bush{color:var(--gorse)}
+.s-nm{color:var(--estuary)}
+
+/* ---------- footer ---------- */
+footer{padding:48px 0 72px;font-family:"Archivo",sans-serif;font-size:.86rem;color:var(--ink-soft)}
+footer strong{color:var(--ink)}
+.print{
+  font-family:"Archivo",sans-serif;font-size:.84rem;font-weight:500;
+  background:transparent;border:1px solid var(--line);color:var(--ink-soft);
+  padding:9px 16px;border-radius:3px;cursor:pointer;margin-top:20px
+}
+.print:hover{border-color:var(--moss);color:var(--moss)}
+
+@media (max-width:620px){
+  body{font-size:17px}
+  .bars{height:180px}
+  .figs{grid-template-columns:repeat(2,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .chart .bar .val{opacity:1}
+}
+@media print{
+  .nav,.print,.filters,.tabs{display:none}
+  body{font-size:11pt;background:#fff;color:#000}
+  section{page-break-inside:avoid;border-bottom:1px solid #ccc}
+  .case[hidden]{display:block!important}
+}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <p class="kicker">Impact report for Place For You</p>
+    <h1>Movement Mondays</h1>
+    <p class="standfirst">Six months of outdoor movement, bushcraft and play — and what changed for the people who came.</p>
+    <p class="meta">
+      April to September 2026<br>
+      26 sessions · 214 attendances · 46 people through the door for the first time<br>
+      Delivered by Luke and Jamie at Place For You and in Shotton, Deeside
+    </p>
+  </div>
+</header>
+
+<div class="circle">
+  <div class="wrap">
+    <h2>How people left</h2>
+    <p class="lede">Every session ends the same way. We sit in a circle and each person says how they're leaving. These are their actual words. Pick one.</p>
+    <ul class="chips" id="chips"></ul>
+    <div class="said">
+      <blockquote id="saidText"></blockquote>
+      <span class="attrib" id="saidWho"></span>
+    </div>
+  </div>
+</div>
+
+<nav class="nav" aria-label="Report sections">
+  <div class="inner">
+    <a href="#summary">Summary</a>
+    <a href="#project">The project</a>
+    <a href="#delivered">What we delivered</a>
+    <a href="#changed">What changed</a>
+    <a href="#cases">Case studies</a>
+    <a href="#feedback">Families' words</a>
+    <a href="#learnt">What we've learnt</a>
+    <a href="#log">Session log</a>
+  </div>
+</nav>
+
+<!-- SUMMARY -->
+<section id="summary">
+  <div class="wrap">
+    <h2>Summary</h2>
+    <p class="sec-note">The short version</p>
+
+    <div class="figs">
+      <div class="fig"><b>26</b><span>sessions delivered</span></div>
+      <div class="fig"><b>214</b><span>attendances</span></div>
+      <div class="fig"><b>46</b><span>first-time attendees</span></div>
+      <div class="fig"><b>9.8</b><span>out of 10 would recommend us</span></div>
+    </div>
+
+    <div class="narrow">
+      <p>Between April and September 2026 we ran 26 Movement Mondays sessions across three strands: <strong>Move Strong – Play Wild</strong> for families, <strong>Nature Moves</strong> for people aged 50 and over, and <strong>Bushcraft</strong>, which wasn't in the original plan and was added partway through because families asked for it.</p>
+
+      <p>Thirteen people completed the feedback survey. Feeling welcomed and safe scored 5 out of 5 from every single respondent. Eleven of the thirteen said the sessions went beyond their expectations. Nine of the thirteen had never been to anything like this before.</p>
+
+      <p>The numbers matter, but they aren't the story. The story is in the session logs.</p>
+
+      <p>A boy who started the project whispering into his mum's ear so she could speak for him now checks the group out on his own, and his mum says it's showing up in other groups outside our sessions. Parents who watched from the side for weeks now join in — and every time one of them does, their child's engagement rises with them. A woman who arrived on a mobility scooter after ankle surgery is working towards walking her dog again, and came back one week buzzing because she'd used something we'd practised in a real situation. Another was walking her dog past the field on sticks after a hip replacement, joined in on the spot, and a month later put the sticks down to catch a bean bag.</p>
+
+      <p>One thing we want to be straight about. The family strand is established and growing. The over-50s strand isn't where we want it — the groups have been small, and referral routes we expected to work haven't delivered. We've kept running it, we'd make that choice again, and we've learnt some specific things about why. That's all in the final section.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT -->
+<section id="project">
+  <div class="wrap">
+    <h2>About Movement Mondays</h2>
+    <p class="sec-note">One project, two programmes, and one thing we added because we listened</p>
+
+    <div class="narrow first">
+      <h3>Two programmes under one roof</h3>
+      <p><strong>Nature Moves</strong> is for people aged 50 and over. Gentle outdoor movement, built around the things that make daily life easier — getting up off the floor, balancing, carrying, getting under and over things. It runs in Shotton, Deeside. It's free, and it's as much about the brew and the natter as the movement.</p>
+
+      <p><strong>Move Strong – Play Wild</strong> is for families. Same principles, different energy. Games, challenges and play that get children and adults moving together, outdoors, in all weathers.</p>
+
+      <p>Both are invitational. People can take part, take it at their own pace, or sit at the side and watch until they're ready. Nobody is pushed. That matters more than it sounds — a good number of our regulars started out watching.</p>
+
+      <h3>Why bushcraft was added</h3>
+      <p>We didn't plan bushcraft at the start. The families told us they wanted it.</p>
+      <p>Some children and adults connect through movement. Others connect through making something — a fire, a shelter, a carved stick. Once we saw that, we built it in. We now alternate between movement and bushcraft, and sometimes combine the two in a single session.</p>
+      <p>That change came directly from listening, and it's been one of the most valuable decisions of the project. Several of our strongest moments this year happened around a fire or in a hammock, not in a game.</p>
+
+      <h3>Home education</h3>
+      <p>Home education sessions also sit under the Movement Mondays banner, delivered for home ed families at Place For You.</p>
+
+      <h3>Who delivers it</h3>
+      <p>Sessions are led by Luke and Jamie, at Place For You for the family and bushcraft strands, and in Shotton for Nature Moves.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERED -->
+<section id="delivered">
+  <div class="wrap">
+    <h2>What we delivered</h2>
+    <p class="sec-note">April to September 2026</p>
+
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr><th>Strand</th><th class="n">Sessions</th><th class="n">Attendances</th><th class="n">First-timers</th><th class="n">Average group</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Move Strong – Play Wild</td><td class="n">12</td><td class="n">132</td><td class="n">27</td><td class="n">11</td></tr>
+          <tr><td>Bushcraft</td><td class="n">6</td><td class="n">61</td><td class="n">11</td><td class="n">10</td></tr>
+          <tr><td>Nature Moves</td><td class="n">8</td><td class="n">21</td><td class="n">8</td><td class="n">3</td></tr>
+          <tr class="total"><td>Total</td><td class="n">26</td><td class="n">214</td><td class="n">46</td><td class="n">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caption">Attendances count visits, not people — regulars are counted each time they come. Three bushcraft sessions were logged without a first-timer count, so 46 is a floor rather than a ceiling.</p>
+
+    <div class="narrow">
+      <h3>How attendance moved across the six months</h3>
+    </div>
+
+    <div class="chart" id="chart">
+      <div class="bars" id="bars"></div>
+      <div class="xaxis">
+        <span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--moss)"></i>Move Strong – Play Wild</span>
+        <span><i style="background:var(--gorse)"></i>Bushcraft</span>
+        <span><i style="background:var(--estuary)"></i>Nature Moves</span>
+      </div>
+    </div>
+
+    <div class="narrow">
+      <p style="margin-top:32px">Two things stand out.</p>
+      <p>August was the strongest month of the project. The school holidays let us run longer, fuller days — 3 August brought 16 people to a family session with 11 of them new, and 10 August brought 24 to a bushcraft day. Families came as families. One session had a three-week-old baby and a seventy-year-old in the same space.</p>
+      <p>September held that gain rather than losing it. The first family session back after the holidays drew 24 people, our joint-highest of the period. The group that formed over the summer stayed together.</p>
+
+      <h3>Two strands, two different pictures</h3>
+      <p>Move Strong – Play Wild and Bushcraft have grown into a settled, well-attended community. Between them they account for 193 of the 214 attendances, and the shift between movement and bushcraft — the change families asked for — has kept people coming back rather than drifting off.</p>
+      <p>Nature Moves has been a harder build. Groups have been small, sometimes one or two people, once just one. We've kept running regardless, and it's worth saying why: the smaller sessions have produced some of the most significant individual outcomes in the whole project. But the numbers are the numbers, and we cover what we've learnt in the final section.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CHANGED -->
+<section id="changed">
+  <div class="wrap">
+    <h2>What changed for people</h2>
+    <p class="sec-note">Drawn from facilitator logs written after every session</p>
+
+    <div class="narrow">
+      <p>The logs were written in the moment, without knowing what would matter later. Read together across six months, four clear patterns emerge.</p>
+    </div>
+
+    <div class="narrow theme">
+      <h3>People find their voice</h3>
+      <p>This came up more than any other theme.</p>
+      <p>O started the project speaking only through his mum — whispering in her ear at check-in so she could say it for him. In June he checked in on his own, "excited". By July he took the talking stick first and checked the group out himself. In September he checked in with his big brother's support and checked out entirely alone.</p>
+      <p>His mum told us this is now showing up outside our sessions, in other groups.</p>
+      <p>He isn't the only one. In July a new boy who is selectively mute spoke to a facilitator on his first day. His mum said it was a credit to us that he chose to speak. In September, M — also selectively non-verbal — talked face to face about his new mountain bike toy, rather than through his dad.</p>
+      <p>One parent wrote that her autistic son "isn't a very sociable person but he thrives in these sessions". Another told us that a year ago her son didn't speak to anyone, and that the space we've created helped him find his voice.</p>
+      <div class="pull"><p>"He doesn't speak to just anyone, so well done you."</p><cite>Parent, July</cite></div>
+    </div>
+
+    <div class="narrow theme">
+      <h3>Adults join in, and everything else improves</h3>
+      <p>We noticed early that when a parent takes part, their child's engagement changes.</p>
+      <p>In April one mum who usually sat out took part at her own pace and surprised herself. Her son's engagement improved immediately — he took the chance to compete against her. At check-out, several of the younger children said they were happy to see her getting involved. She told us she'd decided to join in because her own mobility mattered to her.</p>
+      <p>By May the mums were setting the tone for whole sessions. By September parents were among the most competitive people in the field.</p>
+      <p>What makes it possible is permission to be bad at it. One mum wrote that she felt "free to be silly without judgement". A facilitator logged it as families being confident enough in the group to be silly and weird. That's the mechanism. People join in once it's safe to get it wrong.</p>
+      <div class="pull"><p>"It was nice to be able to move without thinking about it."</p><cite>Parent, May</cite></div>
+    </div>
+
+    <div class="narrow theme">
+      <h3>Movement changes when you stop thinking about it</h3>
+      <p>This runs right through Nature Moves.</p>
+      <p>D came in saying she'd be rubbish at it, then set the best time in the group on the pick-up challenge. In August she moved noticeably better and faster the less she thought about it, and said afterwards: "I don't even know what I just did — I didn't think."</p>
+      <p>P joined a session by chance. She was walking her dog past us, on walking sticks after a new hip, and her physiotherapist had told her to find a balance class. She joined in on the spot, dog included. Her arm went higher that day than it ever had — because she was playing rather than performing. In September she put her stick down entirely to catch bean bags.</p>
+      <p>This is the argument for play as the delivery method. Games bypass the self-consciousness that stops people moving.</p>
+      <div class="pull"><p>"I learnt so much in an hour about my body and limitations."</p><cite>Participant, July</cite></div>
+    </div>
+
+    <div class="narrow theme">
+      <h3>Children who usually can't stay, stay</h3>
+      <p>Several children came to us with a pattern of disrupting and leaving.</p>
+      <p>T was one. In July he became dysregulated, calmed himself, and came back to the group to finish well. The log notes that this would normally have been game over for him. The following week he didn't fully engage, but he didn't sabotage anything either — he took himself off with his mum while his sister carried on playing. The facilitator's note reads: week on week I see progress with this young man.</p>
+      <p>In August, two boys came close to conflict, regulated themselves, and it passed within minutes. In July, two young people who usually distract others took part start to finish and supported others doing it. A late arrival who would normally unsettle the group didn't.</p>
+      <p>The regulation games — Sleeping Giants in particular — do real work here. They lift energy and bring it back down, and the children have learnt to use them.</p>
+    </div>
+
+    <div class="narrow theme">
+      <h3>What sits underneath all four</h3>
+      <p>Belonging. It shows up in the logs constantly and in the family feedback even more.</p>
+      <p>A birthday boy chose to spend his birthday with us in August, and a regular brought a cake to share with everyone. New families are welcomed in by the existing group without prompting. A dad who works long hours found the summer sessions a way to spend proper time with his daughter. One mum came in with the Monday blues and left, in her words, feeling better for having played and got out of her head.</p>
+      <div class="pull"><p>"These sessions made us feel a massive sense of belonging. We felt included and respected and they're fun."</p><cite>Family feedback</cite></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="wrap">
+    <h2>Case studies</h2>
+    <p class="sec-note">Three people tracked across the six months. Initials used throughout.</p>
+
+    <div class="tabs" role="tablist" aria-label="Case studies">
+      <button class="tab" role="tab" id="tab-j" aria-controls="case-j" aria-selected="true">J — walking the dog</button>
+      <button class="tab" role="tab" id="tab-o" aria-controls="case-o" aria-selected="false">O — finding a voice</button>
+      <button class="tab" role="tab" id="tab-p" aria-controls="case-p" aria-selected="false">P — the woman walking her dog past</button>
+    </div>
+
+    <article class="case narrow" id="case-j" role="tabpanel" aria-labelledby="tab-j">
+      <p class="who">Nature Moves</p>
+      <h3>"You'd be proud of me this week"</h3>
+      <p>J came to her first session at the end of June.</p>
+      <p>She'd had ankle surgery and lost all her confidence with it. She was getting around on a mobility scooter. Her physiotherapy had ended, but the confidence hadn't come back. It had been a hard year on other fronts too — illness, disability, the loss of her father, and caring for an elderly husband.</p>
+      <p>She had one goal: to walk her dog again.</p>
+      <p>That first session was balance and reaction work. The log from the day notes a few wobbles, but that she recovered well from each one, gave every task a go, and knew her own limits. Her confidence improved round by round.</p>
+      <div class="pull"><p>"Didn't think I could do that."</p><cite>J, first session, June</cite></div>
+      <p>She came back the following week with her husband. She chose the harder options rather than the easy ones, and the log records real skill in balance — pushing herself while still working at her own pace.</p>
+      <p>The turning point came on 20 July. She was the only person who came that day. We checked in, warmed up, and worked the over-under obstacle course, a movement she'd been making steady progress on. Then we sat and had a brew before playing floor is lava, solving our way across the field around her obstacles and niggles.</p>
+      <p>Before any of that, she told the facilitator he'd be proud of her. She'd used one of the movements we'd been working on, in a real situation, in her own life. She was buzzing and couldn't wait to say so.</p>
+      <div class="pull"><p>"You'd be proud of me this week!"</p><cite>J, July</cite></div>
+      <p>In August she came back while recovering from illness, rested when she needed to, and got stuck in anyway.</p>
+      <p>Her written feedback was short: sessions are "having fun, while making balance and movement better", and what she's taking away is "knowing my balance is getting better".</p>
+      <div class="why"><p><strong>Why this matters</strong>J is exactly the person green social prescribing is meant to reach and often misses — post-surgical, low confidence, socially isolated, carrying grief and caring responsibilities. What moved her wasn't a programme of exercises. It was a movement she'd practised in play turning up unprompted in her actual life.</p></div>
+    </article>
+
+    <article class="case narrow" id="case-o" role="tabpanel" aria-labelledby="tab-o" hidden>
+      <p class="who">Move Strong – Play Wild and Bushcraft</p>
+      <h3>From whispering to his mum, to speaking for himself</h3>
+      <p>When O started, he wouldn't check in. He'd hide behind his mum and speak into her ear, and she'd say it to the group for him.</p>
+      <p>Check-in and check-out are how every session opens and closes. Each person says a word for how they're feeling. It's small and it's optional, and for O it was the whole mountain.</p>
+      <p>The change came in stages.</p>
+      <p>In May, after a session of foam sword work, he spoke for himself for the first time: "I enjoyed the swords and I am happy." The log that week records his brother R planking with ease after months of work, and helping design the games and set the rules — the two brothers moving in the same direction.</p>
+      <p>In June, at a bushcraft session, he shared in check-in by himself rather than through his mum. He checked in "excited". A week later, at a shelter-building session, he wanted to check in first.</p>
+      <p>In July he took the stick off the facilitator and checked the group out with what he'd enjoyed.</p>
+      <p>By September he was checking in with his big brother's support and checking out entirely on his own.</p>
+      <p>His mum has told us this is showing up elsewhere — that his confidence in our group is translating into other groups outside the sessions.</p>
+      <div class="why"><p><strong>Why this matters</strong>Nobody worked on O's speech. He was given a predictable ritual, an invitation he could decline, a group that didn't make a fuss either way, and six months. That's the intervention.</p></div>
+    </article>
+
+    <article class="case narrow" id="case-p" role="tabpanel" aria-labelledby="tab-p" hidden>
+      <p class="who">Nature Moves</p>
+      <h3>The woman walking her dog</h3>
+      <p>P wasn't a participant. She was walking her dog past the field on a Monday in August and didn't know what we were doing.</p>
+      <p>The facilitator went over and asked.</p>
+      <p>She was using walking sticks. She'd had a new hip, and her physiotherapist had told her to find a balance class. She hadn't found one. She joined in that morning on the spot — dog and all.</p>
+      <p>It was a swords day: reaction, balance, dodging, duelling. We'd checked in by sharing memorable moments from our lives, and the group had connected quickly — the log from the day records tears, vulnerability and trust in a very short space of time.</p>
+      <p>P shared that she'd lost her son the year before. He'd spent his life in a wheelchair but had been active, a sportsman and a traveller. Others in the group could relate — one has a grown-up child who is also a wheelchair user. She was supported, and she said she felt welcomed and a sense of belonging.</p>
+      <p>Her arm went higher that day than it ever had since the operation. The reason is in the log: she didn't think about it. She played.</p>
+      <div class="pull"><p>"I'm nicely surprised by this, it's definitely sparked my interest, thank you."</p><cite>P, August</cite></div>
+      <p>She said she'd return, and she did. In late August she took part with the help of a stick, resting when she needed to and giving everything a go. On 7 September, during a throwing and catching session, she put her stick down to catch bean bags.</p>
+      <div class="pull"><p>"I really enjoyed that. Never thought you could do so much with something so simple."</p><cite>P, September</cite></div>
+      <div class="why"><p><strong>Why this matters</strong>P found us because someone walked over and said hello. No referral, no flyer, no link worker. She'd been told to find a balance class and couldn't find one — while a free one ran in her local park. That's a signposting failure, and it's the single clearest thing we've learnt about reaching the over-50s this year.</p></div>
+    </article>
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section id="feedback">
+  <div class="wrap">
+    <h2>In the families' words</h2>
+    <p class="sec-note">13 survey responses across Move Strong – Play Wild, Nature Moves and Home Ed. All agreed to anonymous use.</p>
+
+    <div class="narrow" id="rates">
+      <h3 style="margin-top:0">How people rated the sessions</h3>
+      <div class="rate"><div class="top"><span class="lbl">I felt welcomed and safe during the session</span><span class="num">5.0</span></div><div class="track"><span class="fill" data-pct="100"></span></div></div>
+      <div class="rate"><div class="top"><span class="lbl">Overall satisfaction with the session</span><span class="num">5.0</span></div><div class="track"><span class="fill" data-pct="100"></span></div></div>
+      <div class="rate"><div class="top"><span class="lbl">The activities helped me connect with myself and nature</span><span class="num">4.8</span></div><div class="track"><span class="fill" data-pct="96"></span></div></div>
+      <div class="rate"><div class="top"><span class="lbl">I connected with others</span><span class="num">4.8</span></div><div class="track"><span class="fill" data-pct="96"></span></div></div>
+      <div class="rate"><div class="top"><span class="lbl">I learned something valuable</span><span class="num">4.6</span></div><div class="track"><span class="fill" data-pct="92"></span></div></div>
+      <p class="caption">Scored 1 (strongly disagree) to 5 (strongly agree).</p>
+    </div>
+
+    <div class="figs" style="margin-top:34px">
+      <div class="fig"><b>9.8</b><span>out of 10 would recommend — twelve 10s and one 8</span></div>
+      <div class="fig"><b>11<span style="font-size:1rem;font-weight:500"> of 13</span></b><span>said the sessions went beyond expectations. None said below.</span></div>
+      <div class="fig"><b>9<span style="font-size:1rem;font-weight:500"> of 13</span></b><span>had never been to anything like this before</span></div>
+    </div>
+
+    <div class="narrow">
+      <p style="margin-top:28px">Every respondent who answered the facilitator questions rated all five measures "extremely well" — explaining the purpose, presenting ideas clearly, holding interest, encouraging participation, and answering questions. All six session aspects were rated "very satisfied" across the board.</p>
+
+      <h3>How the sessions made people feel</h3>
+      <p>We asked for one or two sentences. The answers were mostly about safety and belonging rather than exercise.</p>
+    </div>
+
+    <div class="qgrid">
+      <figure><blockquote>"Welcome, understood, valued for who we are and what we are capable of."</blockquote><figcaption>Family feedback</figcaption></figure>
+      <figure><blockquote>"I felt free to be silly without judgement and very relaxed to be there."</blockquote><figcaption>Family feedback</figcaption></figure>
+      <figure><blockquote>"Happy to connect with others in a fun way and to have an opportunity to move!"</blockquote><figcaption>Family feedback</figcaption></figure>
+      <figure><blockquote>"A sense of happiness that my children have found a group in which they feel safe enough to be themselves."</blockquote><figcaption>What I'm taking away</figcaption></figure>
+      <figure><blockquote>"Being able to switch off to certain pressures."</blockquote><figcaption>What I'm taking away</figcaption></figure>
+      <figure><blockquote>"My son's stronger than me, for the moment!"</blockquote><figcaption>What I'm taking away</figcaption></figure>
+    </div>
+
+    <div class="narrow">
+      <h3>Testimonials</h3>
+      <div class="pull"><p>"As a family we have thoroughly enjoyed our Movement sessions. They have provided my children with an opportunity to participate in group activities in a supportive and inclusive environment. Luke quickly assessed the children's individual needs and tailored games and activities to draw out their strengths and therefore they soon felt valued, seen and successful. The children look forward to their sessions and they have become a favourite part of our week. Thank you."</p><cite>Parent, Move Strong – Play Wild</cite></div>
+      <div class="pull"><p>"Movement Mondays have been incredibly important to our family, providing friendships, fun, accessibility and acceptance. Luke and Jamie are absolutely fantastic, they have such passion, enthusiasm and patience and treat each person with respect. I highly recommend trying a session!"</p><cite>Parent</cite></div>
+      <div class="pull"><p>"Luke is fantastic, we are so thankful for his creativity each week. His knowledge and how he keeps everyone involved and we all learn as we are working together. Thank you to all staff for this, you made us feel part of a community."</p><cite>Parent</cite></div>
+      <div class="pull"><p>"Come along and enjoy fun exercise and friendly chats and feeling well even if you have some health and movement challenges."</p><cite>Nature Moves participant</cite></div>
+      <div class="pull"><p>"Such a friendly welcoming group. It is a credit to Luke."</p><cite>J, Nature Moves</cite></div>
+      <div class="pull"><p>"Thanks to all the effort in planning the details of each event we attended. The venue is made welcoming and supports our needs and so do the leaders. Professional and supportive sessions delivered and our families have enjoyed the opportunity."</p><cite>Home Ed parent</cite></div>
+
+      <h3>What people told us to improve</h3>
+      <p>We asked directly, and we're reporting the answers as given.</p>
+    </div>
+
+    <div class="narrow">
+      <div class="imp">
+        <h4>Too many games, too many transitions</h4>
+        <p>One respondent found there were sometimes too many different games with different rules, changing too quickly. Fair, and we've acted on it — later sessions deliberately repeat familiar games, and the logs show the strongest session flow came on days we stayed with games the group already knew.</p>
+      </div>
+      <div class="imp">
+        <h4>Freedom to opt out of the activity</h4>
+        <p>One parent worried her children were distracting others when they didn't want to join the movement. She was clear she'd never felt pressured, but wanted something else available for them. Worth solving — a parallel free-play option would remove the worry entirely.</p>
+      </div>
+      <div class="imp">
+        <h4>More of it</h4>
+        <p>By far the most common answer. More sessions, longer sessions, keep it going. One said it can't be improved. Another said: "More beanbags!"</p>
+      </div>
+      <div class="imp">
+        <h4>Attendance</h4>
+        <p>One Nature Moves participant said it would be better if more people came. We agree, and that's the next section.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARNT -->
+<section id="learnt">
+  <div class="wrap">
+    <h2>What we've learnt</h2>
+    <p class="sec-note">Including the honest account of where we fell short</p>
+
+    <div class="narrow theme">
+      <h3>Listening changed the programme, and the programme got better for it</h3>
+      <p>Bushcraft wasn't in the original plan. Families asked for it, we built it in, and it became six of our 26 sessions and some of our strongest moments — the feather sticks session where the mums slowed down and talked to each other while the kids played the field, the shared story in the hammocks where a group of children sat still and fully present for ten minutes, the final feast with bread on the fire.</p>
+      <p>The lesson isn't "add bushcraft". It's that some people connect through moving and some connect through making, and a programme that offers only one of those is leaving people out.</p>
+    </div>
+
+    <div class="narrow theme">
+      <h3>Repetition beats novelty</h3>
+      <p>Our instinct at the start was to keep sessions fresh. The logs say otherwise.</p>
+      <p>The best-flowing sessions were the ones running familiar games — Cat Burglars, Dragon Eggs, the Gauntlet, Sleeping Giants. One facilitator note puts it plainly: good session flow, maybe because they're familiar with these games. A family told us in feedback that too many new games with new rules and quick transitions was the one thing that didn't work.</p>
+      <p>Familiarity is what lets people stop concentrating on the instructions and start playing. And playing is where the change happens. We now build sessions around a stable core with one new element, rather than the reverse.</p>
+    </div>
+
+    <div class="narrow theme">
+      <h3>Slow starts work</h3>
+      <p>Several logs note a slow start and then a good session. That's not a coincidence. Arriving into a brew, a gazebo or a shelter that's already up, with time to land before anything official begins, consistently produced better engagement than starting on time. We've adjusted — shelter up first, official start slightly later, let everyone arrive.</p>
+    </div>
+
+    <div class="narrow theme">
+      <h3>Opt-in, opt-out is the reason people stay</h3>
+      <p>Participants named this themselves. The group told a facilitator in August that they liked how invitational it is — they can opt in and opt out.</p>
+      <p>Nearly every significant outcome in this report started with someone watching from the side. The mum who sat out for weeks and then surprised herself. B, who came along with his wife with no intention of joining in, and then did better than he thought. The new girl who watched with her dad and joined when she was ready. O, who checked in through his mum for months. If we'd pushed any of them, we'd have lost them.</p>
+    </div>
+
+    <div class="narrow theme">
+      <h3>Adults are participants, not supervisors</h3>
+      <p>The single biggest lever on children's engagement is whether the adults join in. It's in the logs repeatedly: when a parent takes part, their child's engagement rises, and the whole group's tone lifts. We now design for this explicitly — games that work across a three-week-old to a seventy-year-old, and the permission to be visibly bad at them.</p>
+    </div>
+
+    <div class="narrow theme">
+      <h3>The honest picture on Nature Moves</h3>
+      <p>Nature Moves has not reached the numbers we wanted. Eight sessions, 21 attendances, an average group of three, and one session with a single participant.</p>
+      <p>We've kept running it, and we'd make that choice again. Two of the three case studies in this report are Nature Moves participants, and the depth of outcome in those small groups has been substantial — someone moving from a mobility scooter towards walking her dog, someone putting down a walking stick to catch a bean bag. Small groups allow a level of attention that a class of twenty doesn't.</p>
+      <p>But depth doesn't substitute for reach, and we've learnt some specific things about why the numbers are low.</p>
+      <h4>Referral routes aren't working the way we assumed</h4>
+      <p>We did the outreach — flyers, GP surgeries, practice managers, social prescribing link workers, council contacts, a mapped circuit of seven surgeries across Shotton, Queensferry, Hawarden and Connah's Quay. Uptake from it has been weak.</p>
+      <h4>Our clearest success came from someone walking over and saying hello</h4>
+      <p>P was walking her dog past the session. She'd been told by her physiotherapist to find a balance class and hadn't been able to find one — while a free one was running in her local park. That is the whole problem in one story. The people who need this are being told to look for it, and they can't see it.</p>
+      <h4>The barriers are psychological before they're practical</h4>
+      <p>Fear of what "exercise" will involve, reluctance to turn up alone, transport, and plain unfamiliarity with a new thing. The name of the session matters — one participant told us she'd expected an exercise class and found it was much more. Getting people past that expectation is the work.</p>
+      <h4>What we'd do differently</h4>
+      <p>Go to where the over-50s already are rather than waiting for referrals — warm hubs, coffee mornings, faith groups, care homes, local Facebook groups. Be present and visible in the park during sessions so passers-by can see what it actually is. Give link workers something concrete enough to hand over. And make it easy to come with someone, because turning up alone is the barrier people name most.</p>
+    </div>
+
+    <div class="narrow theme">
+      <h3>What we'd ask for next</h3>
+      <p>More of it, and longer. It's what families asked for more than anything else, and it's what the data supports — the strongest month of the project was August, when the holidays let us run longer, fuller sessions, and September held that gain rather than losing it.</p>
+      <p>The family strand is established and growing. The over-50s strand needs a different route to the people it's built for, and that's where the next push goes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOG -->
+<section id="log">
+  <div class="wrap">
+    <h2>Session log</h2>
+    <p class="sec-note">All 26 sessions, April to September 2026. Filter by strand.</p>
+
+    <div class="filters" id="filters">
+      <button class="tab" data-f="all" aria-pressed="true">All 26</button>
+      <button class="tab" data-f="mspw" aria-pressed="false">Move Strong – Play Wild</button>
+      <button class="tab" data-f="bush" aria-pressed="false">Bushcraft</button>
+      <button class="tab" data-f="nm" aria-pressed="false">Nature Moves</button>
+    </div>
+
+    <div class="scroller">
+      <table class="log">
+        <thead>
+          <tr><th>Date</th><th>Strand</th><th>Led by</th><th class="n">In</th><th class="n">New</th><th>What we did</th></tr>
+        </thead>
+        <tbody id="logBody"></tbody>
+      </table>
+    </div>
+    <p class="caption">"In" is the number attending. "New" is first-time attendees. Blank where not recorded.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Movement Mondays</strong> — impact report for Place For You, April to September 2026.<br>
+    Prepared by Luke Slater. Participant names are shown as initials. All feedback is used with consent.</p>
+    <button class="print" id="printBtn">Print or save as PDF</button>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- check-out circle ---- */
+  var said = [
+    {w:"happy", t:"I enjoyed the swords and I am happy.", a:"O, aged 5, speaking for himself for the first time — May"},
+    {w:"proud", t:"I am proud of myself — because I didn't need daddy today.", a:"Young girl at check-out, August"},
+    {w:"surprised", t:"I don't even know what I just did! I didn't think.", a:"D, Nature Moves, August"},
+    {w:"buzzing", t:"You'd be proud of me this week!", a:"J, after using a movement from the sessions in daily life — July"},
+    {w:"nervous, then glad", t:"I was a bit nervous but glad I came.", a:"First-timer, Nature Moves, August"},
+    {w:"competitive", t:"I surprised myself with my competitiveness.", a:"Nature Moves participant, August"},
+    {w:"unwilling to leave", t:"Can we stay here all night?", a:"Child in the woods, August"},
+    {w:"chilled", t:"I just really enjoyed chilling.", a:"Young person after hammock time, August"},
+    {w:"taught", t:"I learnt so much in an hour about my body and limitations.", a:"Nature Moves participant, July"},
+    {w:"still playing", t:"Can we keep playing?", a:"Child at the end of a session, September"},
+    {w:"capable", t:"Didn't think I could do that.", a:"J, first session, June"},
+    {w:"surprised again", t:"Never thought you could do so much with something so simple.", a:"P, after a bean bag session, September"}
+  ];
+  var chips = document.getElementById("chips");
+  var sText = document.getElementById("saidText");
+  var sWho  = document.getElementById("saidWho");
+
+  function show(i){
+    sText.textContent = "\u201C" + said[i].t + "\u201D";
+    sWho.textContent = said[i].a;
+    var bs = chips.querySelectorAll("button");
+    for (var k=0;k<bs.length;k++){ bs[k].setAttribute("aria-pressed", k===i ? "true":"false"); }
+  }
+  said.forEach(function(s,i){
+    var li = document.createElement("li");
+    var b = document.createElement("button");
+    b.className = "chip"; b.type="button"; b.textContent = s.w;
+    b.setAttribute("aria-pressed","false");
+    b.addEventListener("click", function(){ show(i); });
+    li.appendChild(b); chips.appendChild(li);
+  });
+  show(0);
+
+  /* ---- chart ---- */
+  var months = [
+    {m:"Apr", mspw:20, bush:0,  nm:0},
+    {m:"May", mspw:15, bush:0,  nm:0},
+    {m:"Jun", mspw:0,  bush:37, nm:3},
+    {m:"Jul", mspw:28, bush:0,  nm:4},
+    {m:"Aug", mspw:35, bush:24, nm:11},
+    {m:"Sep", mspw:34, bush:0,  nm:3}
+  ];
+  var MAX = 70;
+  var barsEl = document.getElementById("bars");
+  months.forEach(function(d){
+    var total = d.mspw + d.bush + d.nm;
+    var bar = document.createElement("div");
+    bar.className = "bar";
+    var v = document.createElement("div");
+    v.className = "val"; v.textContent = total;
+    bar.appendChild(v);
+    [["nm",d.nm],["bush",d.bush],["mspw",d.mspw]].forEach(function(pair){
+      if (pair[1] <= 0) return;
+      var s = document.createElement("div");
+      s.className = "seg " + pair[0];
+      s.dataset.h = (pair[1] / MAX * 100).toFixed(2);
+      s.title = pair[1] + " attendances in " + d.m;
+      bar.appendChild(s);
+    });
+    barsEl.appendChild(bar);
+  });
+
+  function grow(root){
+    var segs = root.querySelectorAll(".seg");
+    for (var i=0;i<segs.length;i++){ segs[i].style.height = segs[i].dataset.h + "%"; }
+    root.classList.add("live");
+  }
+  function fill(root){
+    var fs = root.querySelectorAll(".fill");
+    for (var i=0;i<fs.length;i++){ fs[i].style.width = fs[i].dataset.pct + "%"; }
+  }
+
+  var chart = document.getElementById("chart");
+  var rates = document.getElementById("rates");
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        if (e.target === chart) grow(chart);
+        if (e.target === rates) fill(rates);
+        io.unobserve(e.target);
+      });
+    }, {threshold:0.25});
+    io.observe(chart); io.observe(rates);
+  } else { grow(chart); fill(rates); }
+
+  /* ---- case tabs ---- */
+  var tabs = document.querySelectorAll('[role="tab"]');
+  function selectTab(tab){
+    for (var i=0;i<tabs.length;i++){
+      var t = tabs[i], sel = t === tab;
+      t.setAttribute("aria-selected", sel ? "true" : "false");
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !sel;
+    }
+  }
+  for (var i=0;i<tabs.length;i++){
+    (function(t){
+      t.addEventListener("click", function(){ selectTab(t); });
+    })(tabs[i]);
+  }
+
+  /* ---- session log ---- */
+  var log = [
+    ["13 Apr","mspw","Luke",14,0,"Getting up and down from the ground through games."],
+    ["20 Apr","mspw","Luke",6,0,"Picking things up and carrying. Cone quest, then floor is lava cone quest — the group built the rules with us."],
+    ["11 May","mspw","Luke",9,0,"Warm-up then jumping drills — ninja jumps, progressively harder, with rolls. Frog jump lily pad tag and hula hoop race."],
+    ["18 May","mspw","Luke",6,0,"Foam swords: throws with the non-dominant hand, partner reaction drills, dodges, a duel and a group battle."],
+    ["1 Jun","bush","Jamie",10,0,"Basic and advanced fire lighting. Cotton wool recap, then feather sticks."],
+    ["8 Jun","bush","Jamie",4,null,"Pitta bread pizzas on the fire."],
+    ["15 Jun","bush","Luke",11,0,"Tarp shelters and a hammock village. Charcoal drawing and mindfulness colouring. Mini shelters for minibeasts."],
+    ["22 Jun","bush","Jamie",7,null,"Pizza pittas on the fire and hammock time. A shared story, each person adding a line."],
+    ["29 Jun","bush","Jamie",5,null,"Woodland shelter building and carving. The group made an army barracks from sticks and enclosed us with hammocks."],
+    ["29 Jun","nm","Luke",3,2,"Why we want to move better — hobbies, family, grandkids, walking the dog. Warm-up focused on balance and reaction."],
+    ["6 Jul","nm","Luke",3,2,"A brew and a slow start. Picking up, putting down and carrying."],
+    ["6 Jul","mspw","Luke",8,3,"Free play first, then over-unders, the gauntlet, cat burglar and dragon eggs."],
+    ["13 Jul","mspw","Luke",11,5,"Sleeping Giants to lift and settle the group. Children chose the animals and actions. Floor is lava with lava monsters."],
+    ["20 Jul","nm","Luke",1,0,"Over-under obstacle course, a brew, then floor is lava across the field."],
+    ["20 Jul","mspw","Luke",9,2,"Check-in with a fun fact. Catching on the move, partner throwing with changing constraints, bean bag bucket, Move Strong boules."],
+    ["3 Aug","nm","Luke",1,1,"Getting to know each other, then an introduction to dynamic movement through sword work."],
+    ["3 Aug","mspw","Luke",16,11,"No fire — weather. Shelter and hammock day in the shade of the woods, rock collecting and charcoal drawing."],
+    ["10 Aug","nm","Luke",4,3,"Swords day: reaction, balance, dodging, duelling. Check-in on memorable moments in our lives."],
+    ["10 Aug","bush","Luke",24,11,"Orienteering in the park with butterfly counts at each stop. Hammocks, and 1:1 support for an older participant."],
+    ["17 Aug","nm","Luke",2,0,"Balancing games and time to relax and get to know each other."],
+    ["17 Aug","mspw","Luke",9,1,"Balance and moving in new ways. Over-unders, cat burglars and dragon eggs, with parents taking part."],
+            ["24 Aug","nm","Luke",4,0,"A brew to land. Balance and new positions — partner over-under, cat burglar, the gauntlet, egg snatchers."],
+    ["24 Aug","mspw","Luke",10,0,"Fire lighting with cotton wool, blackberry foraging, blackberry syrup with marshmallows, hammocks and movement games."],
+    ["7 Sep","mspw","Luke",24,5,"Sleeping Giant animals to regulate, then unders and overs, balance and new positions. Cat burglars on the beam collecting golden nuggets, the gauntlet, dragon egg snatchers."],
+    ["7 Sep","nm","Jamie",3,0,"Throwing and catching."],
+    ["14 Sep","mspw","Luke",10,0,"Catching and throwing games, planking, and dance moves at the end."]
+  ];
+  var names = {mspw:"Move Strong", bush:"Bushcraft", nm:"Nature Moves"};
+  var body = document.getElementById("logBody");
+  log.forEach(function(r){
+    var tr = document.createElement("tr");
+    tr.dataset.strand = r[1];
+    tr.innerHTML =
+      "<td>" + r[0] + "</td>" +
+      "<td class='strand s-" + r[1] + "'>" + names[r[1]] + "</td>" +
+      "<td>" + r[2] + "</td>" +
+      "<td class='n'>" + r[3] + "</td>" +
+      "<td class='n'>" + (r[4] === null ? "&ndash;" : r[4]) + "</td>" +
+      "<td class='note'>" + r[5] + "</td>";
+    body.appendChild(tr);
+  });
+
+  var fbtns = document.getElementById("filters").querySelectorAll("button");
+  for (var f=0; f<fbtns.length; f++){
+    (function(btn){
+      btn.addEventListener("click", function(){
+        var want = btn.dataset.f;
+        for (var j=0;j<fbtns.length;j++){
+          fbtns[j].setAttribute("aria-pressed", fbtns[j]===btn ? "true":"false");
+          fbtns[j].setAttribute("aria-selected", fbtns[j]===btn ? "true":"false");
+        }
+        var rows = body.querySelectorAll("tr");
+        for (var k=0;k<rows.length;k++){
+          rows[k].hidden = !(want === "all" || rows[k].dataset.strand === want);
+        }
+      });
+    })(fbtns[f]);
+  }
+
+  /* ---- nav scrollspy ---- */
+  var links = document.querySelectorAll(".nav a");
+  var secs = [];
+  for (var L=0; L<links.length; L++){
+    var el = document.querySelector(links[L].getAttribute("href"));
+    if (el) secs.push({link:links[L], el:el});
+  }
+  function spy(){
+    var y = window.scrollY + 120, current = secs[0];
+    for (var s=0;s<secs.length;s++){ if (secs[s].el.offsetTop <= y) current = secs[s]; }
+    for (var t=0;t<secs.length;t++){ secs[t].link.classList.toggle("on", secs[t]===current); }
+  }
+  var ticking = false;
+  window.addEventListener("scroll", function(){
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function(){ spy(); ticking = false; });
+  }, {passive:true});
+  spy();
+
+  document.getElementById("printBtn").addEventListener("click", function(){ window.print(); });
+})();
+</script>
+</body>
+</html>
